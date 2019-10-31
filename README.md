@@ -49,8 +49,8 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text||
-|text|text||
+|image|text|null: false|
+|text|text|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :group
