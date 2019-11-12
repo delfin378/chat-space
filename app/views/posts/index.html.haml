@@ -1,62 +1,51 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title ChatSpaceSample
-    %meta{:content => "authenticity_token", :name => "csrf-param"}/
-    %meta{:content => "dFd0ftBMad1X1/AjvI1sx68iCqs+L21s/tlwEldzFSGd/cM7nVNiNEHc29DLFLcbgEI0+UGeq9n9osBRmn49xA==", :name => "csrf-token"}/
-    %link{"data-turbolinks-track" => "reload", :href => "/assets/application-20597f7122b97f433c4487edf7d6a0cfc9e951e2a661b8b0c7320b95bbd38ccd.css", :media => "all", :rel => "stylesheet"}/
-    %script{"data-turbolinks-track" => "reload", :src => "/assets/application-92a91cf5753a538c5407a46c726acab43576fb46358ffa8a7ee0ee0719aa2f51.js"}
-  %body
-    .flash-box
-    .wrapper
-      .chat-side
-        .side-header
-          .side-header__box
-            %p.side-header__box__user-name HIDDEN
-            %ul.side-header__box__menu
-              %li.side-header__box__menu__new-group
-                %a{:href => "/groups/new"}
-                  %i.fa.fa-edit
-              %li.side-header__box__menu__edit-user
-                %a{:href => "/users/1708/edit"}
-                  %i.fa.fa-cog
-        .groups
-          %a{:href => "/groups/3854/messages"}
-            .group
-              %p.group__group-name イニシャル
-              %p.group__latest-message まだメッセージがありません
-          %a{:href => "/groups/3842/messages"}
-            .group
-              %p.group__group-name イニシャライズ
-              %p.group__latest-message まだメッセージがありません
-      .chat-main
-        .main-header
-          .main-header__left-box
-            %h2.main-header__left-box__current-group{"data-group_id" => "3854"}
-              イニシャル
-            %ul.main-header__left-box__member-list
-              Member：HIDDEN
-              %li.main-header__left-box__member-list__member 
-          %a{:href => "/groups/3854/edit"}
-            .main-header__edit-btn Edit
-        .messages
-          .message{"data-message_id" => "10471"}
-            .message__upper-info
-              .message__upper-info__talker 
-                HIDEEN
-                .message__upper-info__date  
-                  2019/11/05(Tue) 16:22:54
-            .message__down-info
-              .message__text 
-                おはようございます
-        .form
-          %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/3854/messages", :enctype => "multipart/form-data", :method => "post"}
-            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-            %input{:name => "authenticity_token", :type => "hidden", :value => "uO059uslgEJumKOEEj2M1PTpBCt8X2nULLWW90G+qtMbOAOqAQOoS1SILDglp84uRuz5HlvFK/XJOZMUKZN3+w=="}/
-            .input-box
-              %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-              %label.input-box__image{:for => "message_image"}
-                %i.fa.fa-image
-                %input.hidden{type: 'file'}
-            %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name HIDDEN
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            = link_to root_path do
+              %i.fa.fa-edit
+          %li.side-header__box__menu__edit-user
+            = link_to root_path do
+              %i.fa.fa-cog
+    .groups
+      = link_to root_path do
+        .group
+          %p.group__group-name イニシャル
+          %p.group__latest-message まだメッセージがありません
+      = link_to root_path do
+        .group
+          %p.group__group-name イニシャライズ
+          %p.group__latest-message まだメッセージがありません
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group{"data-group_id": "3854"}
+          イニシャル
+        %ul.main-header__left-box__member-list
+          Member：HIDDEN
+          %li.main-header__left-box__member-list__member 
+      = link_to root_path do
+        .main-header__edit-btn Edit
+    .messages
+      .message{"data-message_id": "10471"}
+        .message__upper-info
+          .message__upper-info__talker 
+            HIDEEN
+            .message__upper-info__date  
+              2019/11/05(Tue) 16:22:54
+        .message__down-info
+          .message__text 
+            おはようございます
+    .form
+      %form#new_message.new_message{"accept-charset": "UTF-8",action: "/groups/3854/messages",enctype: "multipart/form-data",method: "post"}
+        %input{name: "utf8", type: "hidden", value: "✓"}/
+        %input{name: "authenticity_token",type: "hidden",value: "uO059uslgEJumKOEEj2M1PTpBCt8X2nULLWW90G+qtMbOAOqAQOoS1SILDglp84uRuz5HlvFK/XJOZMUKZN3+w=="}/
+        .input-box
+          %input#message_content.input-box__text{name: "message[content]",placeholder: "type a message",type: "text"}/
+          %label.input-box__image{for: "message_image"}
+            %i.fa.fa-image
+            %input.hidden{type: 'file'}
+        %input.submit-btn{"data-disable-with": "Send",name: "commit",type: "submit",value: "Send"}/

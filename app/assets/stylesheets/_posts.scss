@@ -11,12 +11,12 @@
     align-items: center;
     padding: 0 20px;
     font-size: 16px;
-    .side-header__box {
+    &__box {
       display: flex;
       justify-content: space-between;
       width: 100%;
       font-weight: bold;
-      .side-header__box__menu {
+      &__menu {
         display: flex;
         letter-spacing: 0.4em;
         .fa{
@@ -34,14 +34,19 @@
   .group {
     box-sizing: border-box;
     padding: 20px 0 40px;
+    &__group-name {
+      font-size: 15px;
+      margin-bottom: 5px;
+      color: white;
+      &__latest-message {
+        font-size: 11px;
+        color: white;
+      }
+    }
   }
 }
 
-.group__group-name {
-  font-size: 15px;
-  margin-bottom: 5px;
-  color: white;
-}
+
 
 .group__latest-message {
   font-size: 11px;
@@ -60,18 +65,16 @@
   justify-content: space-between;
   border-bottom: solid 1px #eee;
   overflow: scroll;
-}
-
-.main-header__left-box{
-  margin-top: 35px;
-  font-size: 20px;
-}
-
-.main-header__left-box__member-list {
-display: flex;
-font-size: 12px;
-color: hsl(0, 0%, 60%);
-padding: 15px 1px;
+  &__left-box{
+    margin-top: 35px;
+    font-size: 20px;
+    &__member-list {
+      display: flex;
+      font-size: 12px;
+      color: hsl(0, 0%, 60%);
+      padding: 15px 1px;
+    }
+  }
 }
 
 .main-header__edit-btn {
@@ -90,7 +93,7 @@ padding: 15px 1px;
   padding: 46px 40px 0px;
   background-color: #fafafa;
   .message {
-  .message__upper-info {
+  &__upper-info {
     display: flex;
     .message__upper-info__talker {
       display: flex;
@@ -140,6 +143,7 @@ padding: 15px 1px;
   font-size: 1.3rem;
   position: absolute;
   cursor: pointer;
+  text-align: center;
   .hidden {
   display: none;
  }
