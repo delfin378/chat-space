@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to root_path
+      redirect_to root_path(@group), notice: 'グループを編集しました'
     else
       render :edit
     end
@@ -15,5 +15,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end
