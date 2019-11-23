@@ -31,9 +31,11 @@
   height: calc(100vh - 120px);
   background-color: #2f3e51;
   padding: 20px 20px 0;
+  overflow: scroll;
   .group {
     box-sizing: border-box;
     padding: 20px 0 40px;
+    overflow: scroll;
     &__group-name {
       font-size: 15px;
       margin-bottom: 5px;
@@ -91,29 +93,30 @@
   box-sizing: border-box;
   height: calc(100vh - 190px);
   padding: 46px 40px 0px;
-  background-color: #fafafa;
-  .message {
-  &__upper-info {
-    display: flex;
-    .message__upper-info__talker {
-      display: flex;
-      color: #434a54;
-      font-size: 16px;
-      font-weight: bold;
-      .message__upper-info__date {
-        color: #999999;
-        font-size: 12px;
-        margin-left: 10px;
-    }
-   }
-  }
- }
+  background-color: hsl(0, 0%, 98%);
+  overflow: scroll;
 }
 
-.message__text {
+
+.upper-message__user-name {
+  display: flex;
+  float: left;
+  color: #434a54;
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+.upper-message__date {
+  color: #999999;
+  font-size: 12px;
+}
+.lower-message {
   color: #434a54;
   font-size: 14px;
-  padding: 10px 20px 0px 0px;
+  padding: 15px 0px 0px 0px;
+  &__content{
+    padding-bottom: 40px;
+  }
 }
 
 .form {
@@ -124,13 +127,13 @@
   position: fixed
 }
 
-.input-box{
+.form-box{
   float: left;
   height: 50px;
   width: calc(100vw - 150px);
 }
 
-.input-box__text {
+.form__message {
   background-color: white;
   float: left;
   height: 50px;
@@ -139,7 +142,7 @@
   position: relative;
 }
 
-.input-box__image {
+.form__mask__image {
   font-size: 1.3rem;
   position: absolute;
   cursor: pointer;
@@ -149,7 +152,7 @@
  }
 }
 
-.submit-btn {
+.form__submit {
   width: 100px;
   height: 50px;
   margin-left: 10px;
