@@ -35,10 +35,10 @@
   .group {
     box-sizing: border-box;
     padding: 20px 0 40px;
-    overflow: scroll;
     a:link { color: white; }
     a:visited { color: white; }
     a {text-decoration: none;}
+    overflow: scroll;
     &__group-name {
       font-size: 15px;
       margin-bottom: 5px;
@@ -120,6 +120,12 @@
   &__content{
     padding-bottom: 40px;
   }
+}
+
+.lower-message__image{
+  width: 90%;
+  height: 90%;
+  padding-bottom: 30px;
 }
 
 .form {
