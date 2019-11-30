@@ -36,7 +36,6 @@ $(function(){
    .done(function(data){
     var html = buildHTML(data);
     $('.messages').append(html);
-    $('#message_content').val(''); 
     $('#new_message.form-box')[0].reset();
     })
     
