@@ -67,7 +67,6 @@ $(function(){
         })
 
         .done(function (messages) { 
-          console.log(messages)
           var insertHTML = '';
           messages.forEach(function (message) {
             insertHTML += buildHTML(message);
@@ -76,7 +75,7 @@ $(function(){
         })
         })
         .fail(function () {
-          console.log('自動更新に失敗しました');
+          alert('自動更新に失敗しました');
         });
       }
     };
