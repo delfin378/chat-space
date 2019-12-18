@@ -44,12 +44,7 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 
-  set :default_env,{
-    rbenv_root: "/user/local/rbenv",
-    AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"]
-    AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
-
-  }
+  
 
   desc 'upload secrets.yml'
   task :upload do
